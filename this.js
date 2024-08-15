@@ -26,8 +26,50 @@ const obj = {
 obj.getVal()
 
 
-// call - apply - bind 
+// CALL - APPLY - BIND
 
+//1. CALL
+
+let name1 = {
+  firstName: "Darshan",
+  lastName: "Choudhary",
+  // method too here
+  fullName: function(city, age) {
+    console.log("My name is " + this.firstName + " " + this.lastName + ", " + "I reside in " + city + " and I'm " + age + " years old")
+  }
+}
+let name2 = {
+  firstName: "Nikita",
+  lastName: "Singh",
+}
+
+// I want to print name2, but I lack the method to do that ?? => this is where we use "CALL"
+// ki name1 ke method ko name2 ki properties inherit karle
+
+// more technical terms => we are actually pointing this in name1 to out name2 object
+
+name1.fullName.call(name2)
+
+//imagine there's more u want but property doesn't there in the name
+// can do more 
+
+console.log("By call method")
+name1.fullName.call(name2, "Noida", 21)
+
+
+// 2. APPLY METHOD - differs from apply only in way of passign arguements generally
+// pass it like in a array 
+
+console.log("By apply method")
+name1.fullName.apply(name2, ["Ghaziabad", 23])
+
+
+//3. BIND METHOD - binds the method to the object and returns a new function
+
+const bindFn = name1.fullName.bind(name2, "Ghaziabad", 23)
+// so yaha bindFn basically is a function, so this can be invoked
+console.log("By bind method")
+bindFn();
 
 
 
