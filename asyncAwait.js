@@ -76,6 +76,7 @@ const getApi = async () => {
     // Optionally, set some styles for the image
     img.style.width = "200px"; // Example width
     img.style.height = "200px"; // Example height
+    // img.style.
 
     // Append the img element to the container
     api.appendChild(img);
