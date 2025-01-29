@@ -3,7 +3,7 @@ const cart = ["pants", "kurta", "shirt", "shoes"]
 // first thing is callback hell - Pyramind of Doom
 // What is callback hell? - It's when one function did dependent on other function to execute than to follow the code.
 // which makes code highly unmaintainable and difficult to debug.
-// Also callback hell introduce version control - which tranfers the control of a function entirely to another function waiting for that to complete then will execute.
+// Also callback hell introduce inversion control - which tranfers the control of a function entirely to another function waiting for that to complete then will execute.
 // How does it look like ?
 
 createOrder(cart, function(orderId) {
